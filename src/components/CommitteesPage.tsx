@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { Download, Users, ChevronDown, ChevronUp, Globe } from 'lucide-react';
-import { committees } from '../lib/data';
-import type { Committee } from '../lib/supabase';
+import { committees, type Committee } from '../lib/data';
 
 export function CommitteesPage() {
   const [expandedCard, setExpandedCard] = useState<string | null>(null);

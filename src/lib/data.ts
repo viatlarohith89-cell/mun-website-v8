@@ -1,4 +1,11 @@
-import type { Committee } from './supabase';
+export type Committee = {
+  name: string;
+  fullName: string;
+  agenda: string;
+  executiveBoard: { name: string; role: string }[];
+  studyGuideUrl: string;
+  description: string;
+};
 
 export const committees: Committee[] = [
   {
@@ -63,58 +70,4 @@ export const committees: Committee[] = [
   },
 ];
 
-export const countries = [
-  'United States',
-  'United Kingdom',
-  'France',
-  'Germany',
-  'China',
-  'Russia',
-  'India',
-  'Brazil',
-  'Japan',
-  'South Africa',
-  'Australia',
-  'Canada',
-];
-
-export const ipcRoles = [
-  'Photographer',
-  'Journalist',
-];
-
-export const personalities = [
-  'Narendra Modi (BJP)',
-  'Rahul Gandhi (INC)',
-  'Mamata Banerjee (TMC)',
-  'Arvind Kejriwal (AAP)',
-  'Nitish Kumar (JDU)',
-  'Sharad Pawar (NCP)',
-  'Mayawati (BSP)',
-  'Akhilesh Yadav (SP)',
-  'Uddhav Thackeray (SHS)',
-  'M.K. Stalin (DMK)',
-  'Y.S. Jagan Mohan Reddy (YSRCP)',
-  'Naveen Patnaik (BJD)',
-  'H.D. Kumaraswamy (JD(S))',
-  'Chandrababu Naidu (TDP)',
-  'Sitaram Yechury (CPI(M))',
-  'Asaduddin Owaisi (AIMIM)',
-  'Parkash Singh Badal (SAD)',
-  'Hemant Soren (JMM)',
-];
-
 export const committeeNames = ['DISEC', 'UNHRC', 'UNCSW', 'IPC', 'AIPPM'];
-
-export function isPersonalityCommittee(committee: string): boolean {
-  return committee === 'AIPPM';
-}
-
-export function isIPC(committee: string): boolean {
-  return committee === 'IPC';
-}
-
-export function getOptionsForCommittee(committee: string): string[] {
-  if (isIPC(committee)) return ipcRoles;
-  return isPersonalityCommittee(committee) ? personalities : countries;
-}
