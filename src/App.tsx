@@ -2,8 +2,9 @@ import { useState } from 'react';
 import { Layout } from './components/Layout';
 import { HomePage } from './components/HomePage';
 import { CommitteesPage } from './components/CommitteesPage';
+import { SecretariatPage } from './components/SecretariatPage';
 
-type Page = 'home' | 'committees' | 'register';
+type Page = 'home' | 'committees' | 'secretariat' | 'register';
 
 const REGISTRATION_FORM_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSdLrLMyDLWbbJ38rd-PKvGWT94HWYdJg_z44RfI6i5jWfKXhQ/viewform';
 
@@ -25,6 +26,8 @@ function App() {
         return <HomePage onNavigate={handleNavigate} />;
       case 'committees':
         return <CommitteesPage />;
+      case 'secretariat':
+        return <SecretariatPage />;
       default:
         return <HomePage onNavigate={handleNavigate} />;
     }

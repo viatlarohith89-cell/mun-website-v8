@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Menu, X } from 'lucide-react';
 import awsmunLogo from '../../public/image.png';
 
-export type Page = 'home' | 'committees' | 'register';
+export type Page = 'home' | 'committees' | 'secretariat' | 'register';
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -16,6 +16,7 @@ export function Layout({ children, currentPage, onNavigate }: LayoutProps) {
   const navItems: { page: Page; label: string }[] = [
     { page: 'home', label: 'Home' },
     { page: 'committees', label: 'Committees' },
+    { page: 'secretariat', label: 'Our Secretariat' },
     { page: 'register', label: 'Register' },
   ];
 
@@ -115,6 +116,11 @@ export function Layout({ children, currentPage, onNavigate }: LayoutProps) {
                 <li>
                   <button onClick={() => onNavigate('committees')} className="hover:text-white transition-colors">
                     Committees
+                  </button>
+                </li>
+                <li>
+                  <button onClick={() => onNavigate('secretariat')} className="hover:text-white transition-colors">
+                    Our Secretariat
                   </button>
                 </li>
                 <li>
